@@ -1,15 +1,13 @@
 :root {
     --border-color: #DBDBDB;
     --nav-height: 28px;
+    --nav-icon-size: 22px;
+    --nav-icon-spacing: 16px;
     --content-width: 1020px;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-}
-
-ion-icon {
-    font-size: 22px;
 }
 
 header {
@@ -40,29 +38,50 @@ header {
     align-items: center;
 }
 
-.left-nav ion-icon {
-    padding-right: 10px;
-    border-right: 1px solid var(--border-color);
+/* Espaçando igualmente quaisquer
+   filhos diretos de .left-nav e
+   .right-nav */
+.left-nav>*+* {
+    margin-left: calc(var(--nav-icon-spacing) / 2);
 }
 
-.logo {
+.right-nav>*+* {
+    margin-left: var(--nav-icon-spacing);
+}
+
+/* Restringindo tamanho dos ícones da
+   navbar e de seus respectivos links */
+nav ion-icon {
+    font-size: var(--nav-icon-size)
+}
+
+nav a {
+    width: var(--nav-icon-size);
+    height: var(--nav-icon-size)
+}
+
+nav .vertical-border {
+    width: 1px;
     height: var(--nav-height);
-    margin-left: 10px;
+    background-color: var(--border-color);
 }
 
-.right-nav ion-icon {
-    margin-left: 10px;
+nav .logo {
+    height: var(--nav-height);
 }
 
+/* Formatando caixa de pesquisa */
 nav input {
     width: 215px;
-    height: 28px;
-
+    height: var(--nav-height);
     background-color: #FAFAFA;
     border-radius: 3px;
     border: 1px solid var(--border-color);
-
     font-size: 12px;
+}
+
+nav input:focus {
+    outline: 1px solid var(--border-color);
 }
 
 nav input::placeholder {
