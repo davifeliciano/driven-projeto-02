@@ -4,6 +4,8 @@
     --nav-icon-size: 22px;
     --nav-icon-spacing: 16px;
     --content-width: 1020px;
+    --header-footer-height: 54px;
+    --header-footer-padding: 20px;
 }
 
 body {
@@ -14,8 +16,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 54px;
-    padding: 0 10px;
+    height: var(--header-footer-height);
+    padding: 0 var(--header-footer-padding);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -88,7 +90,26 @@ nav input::placeholder {
     text-align: center;
 }
 
-/* Versão mobile do header */
+/* Nav do footer para versão mobile */
+footer {
+    display: none;
+    height: var(--header-footer-height);
+    width: 100vw;
+    padding: 0 var(--header-footer-padding);
+    border-top: 1px solid var(--border-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Versão mobile do header e do footer */
 @media (max-width: 767px) {
     .desktop-nav {
         display: none;
@@ -99,5 +120,14 @@ nav input::placeholder {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
