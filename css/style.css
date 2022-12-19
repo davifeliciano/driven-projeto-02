@@ -36,8 +36,8 @@ header {
     height: var(--nav-height);
 }
 
-.left-nav,
-.right-nav {
+.nav-logo,
+.nav-items {
     display: flex;
     align-items: center;
 }
@@ -45,11 +45,11 @@ header {
 /* Espaçando igualmente quaisquer
    filhos diretos de .left-nav e
    .right-nav */
-.left-nav {
+.nav-logo {
     gap: 10px;
 }
 
-.right-nav {
+.nav-items {
     gap: 16px;
 }
 
@@ -154,8 +154,9 @@ main {
     gap: 14px;
     width: 100%;
     height: 118px;
-    overflow-x: hidden;
     padding: 0 18px;
+    margin-bottom: 24px;
+    overflow-x: hidden;
     border-radius: 3px;
     border: 1px solid var(--border-color);
     position: relative;
@@ -223,7 +224,86 @@ main {
     text-overflow: ellipsis;
 }
 
-/* Versão mobile dos stories */
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 60px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+}
+
+.post>*:not(img) {
+    padding-inline: 17px;
+}
+
+.post>img {
+    width: 100%;
+    height: auto;
+}
+
+.post .username {
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 15px;
+}
+
+.post-header>* {
+    display: flex;
+    align-items: center;
+}
+
+.post-header-left {
+    gap: 15px;
+}
+
+.post-header img {
+    width: 32px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.post-options a {
+    width: 16px;
+    height: 16px;
+}
+
+.post-options ion-icon {
+    font-size: 16px;
+}
+
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+}
+
+.post-info {
+    display: flex;
+    gap: 5px;
+    height: 20px;
+}
+
+.post-info img {
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.post-info p {
+    font-size: 14px;
+}
+
+/* Versão mobile do conteúdo */
 @media (max-width: 934px) {
     .sidebar {
         display: none;
@@ -233,6 +313,7 @@ main {
 @media (min-width: 768px) and (max-width: 934px) {
     main {
         width: var(--post-width);
+        margin: auto;
     }
 }
 
@@ -244,6 +325,7 @@ main {
 
     .stories {
         width: 100vw;
+        margin: 0;
         border-radius: 0;
         border: none;
         border-bottom: 1px solid var(--border-color);
@@ -260,5 +342,11 @@ main {
 
     .stories button {
         display: none;
+    }
+
+    .post {
+        width: 100vw;
+        margin-bottom: 0;
+        border-top: none;
     }
 }
