@@ -1,5 +1,4 @@
 :root {
-    --border-color: #DBDBDB;
     --nav-height: 28px;
     --nav-icon-size: 22px;
     --nav-icon-spacing: 16px;
@@ -9,6 +8,9 @@
     --sidebar-width: 293px;
     --header-footer-height: 54px;
     --header-footer-padding: 20px;
+    --border-color: #DBDBDB;
+    --username-color: #262626;
+    --secondary-text-color: #8E8E8E;
 }
 
 body {
@@ -150,6 +152,7 @@ footer {
     }
 }
 
+/* Layout do conteúdo principal */
 main {
     display: flex;
     justify-content: space-between;
@@ -259,10 +262,11 @@ main {
     height: auto;
 }
 
-.post .username {
+.post .username,
+.sidebar .username {
     font-size: 14px;
     font-weight: 500;
-    color: #262626;
+    color: var(--username-color);
 }
 
 .post-header {
@@ -323,12 +327,6 @@ main {
 }
 
 /* Versão mobile do conteúdo */
-@media (max-width: 934px) {
-    .sidebar {
-        display: none;
-    }
-}
-
 @media (min-width: 768px) and (max-width: 934px) {
     main {
         width: var(--post-width);
@@ -367,5 +365,117 @@ main {
         width: 100vw;
         margin-bottom: 0;
         border-top: none;
+    }
+}
+
+/* Layout da sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 293px;
+    height: 400px;
+    position: sticky;
+    top: calc(18px + 33px - 28px);
+    /* + margin-top dos stories 
+       + 50% da altura de .storie img  
+       - 50% da altura de .sidebar-profile img */
+    right: 0;
+}
+
+.sidebar .userinfo {
+    line-height: 16px;
+}
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 24px;
+}
+
+.sidebar-profile img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.sidebar-profile .fullname {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.sidebar-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.sidebar-suggestions>* {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestions-header>* {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.suggestions-header a {
+    color: var(--username-color);
+}
+
+.suggestion .follow {
+    font-size: 12px;
+    font-weight: 500;
+    color: #139EF2;
+}
+
+.suggestion-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.suggestion-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.suggestion-info .description {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+.sidebar nav {
+    line-height: 12px;
+    margin-bottom: 18px;
+}
+
+.sidebar nav a,
+.sidebar .copyright {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+.sidebar nav a::after {
+    content: "•";
+    margin-left: 0.5ch;
+}
+
+.sidebar nav a:last-child::after {
+    display: none;
+}
+
+/* Versão mobile da sidebar */
+@media (max-width: 934px) {
+    .sidebar {
+        display: none;
     }
 }
