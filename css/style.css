@@ -2,6 +2,7 @@
     --border-color: #DBDBDB;
     --nav-height: 28px;
     --nav-icon-size: 22px;
+    --nav-icon-spacing: 16px;
     --content-width: 935px;
     --story-button-width: 26px;
     --post-width: 614px;
@@ -48,15 +49,12 @@ header {
     align-items: center;
 }
 
-/* Espaçando igualmente quaisquer
-   filhos diretos de .left-nav e
-   .right-nav */
 .nav-logo {
     gap: 10px;
 }
 
 .nav-items {
-    gap: 16px;
+    gap: var(--nav-icon-spacing);
 }
 
 /* Restringindo tamanho dos ícones da
@@ -305,19 +303,18 @@ main {
     padding-block: 10px;
 }
 
+.post-nav .nav-items {
+    margin-right: var(--nav-icon-spacing);
+}
+
 .post-info {
     display: flex;
     gap: 5px;
 }
 
-.post-info>a {
+.post-info img {
     width: 20px;
     height: 20px;
-}
-
-.post-info img {
-    width: 100%;
-    height: auto;
     border-radius: 50%;
 }
 
