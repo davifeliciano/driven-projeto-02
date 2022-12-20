@@ -18,9 +18,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: var(--header-footer-height);
     padding: 0 var(--header-footer-padding);
     border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
 }
 
 .desktop-nav {
@@ -99,7 +105,7 @@ footer {
     width: 100vw;
     padding: 0 var(--header-footer-padding);
     border-top: 1px solid var(--border-color);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
@@ -109,6 +115,12 @@ footer nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+header,
+footer {
+    z-index: 1;
+    background-color: white;
 }
 
 /* Versão mobile do header e do footer */
@@ -122,6 +134,12 @@ footer nav {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+
+    main {
+        position: absolute;
+        top: -34px;
+        left: 0;
     }
 
     footer {
@@ -139,7 +157,7 @@ main {
     justify-content: space-between;
     width: var(--content-width);
     margin: auto;
-    margin-top: 34px;
+    transform: translateY(calc(var(--header-footer-height) + 34px));
 }
 
 .main-container {
@@ -290,12 +308,16 @@ main {
 .post-info {
     display: flex;
     gap: 5px;
+}
+
+.post-info>a {
+    width: 20px;
     height: 20px;
 }
 
 .post-info img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
 }
 
