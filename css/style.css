@@ -45,13 +45,13 @@ header {
     height: var(--nav-height);
 }
 
-.nav-logo,
+.nav-home,
 .nav-items {
     display: flex;
     align-items: center;
 }
 
-.nav-logo {
+.nav-home {
     gap: 10px;
 }
 
@@ -59,29 +59,22 @@ header {
     gap: var(--nav-icon-spacing);
 }
 
-/* Restringindo tamanho dos ícones da
-   navbar e de seus respectivos links */
 nav ion-icon {
     font-size: var(--nav-icon-size)
-}
-
-nav a {
-    width: var(--nav-icon-size);
-    height: var(--nav-icon-size)
-}
-
-nav .vertical-border {
-    width: 1px;
-    height: 100%;
-    background-color: var(--border-color);
 }
 
 nav .logo {
     height: 100%;
 }
 
+.desktop-nav .vertical-border {
+    width: 1px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
 /* Formatando caixa de pesquisa */
-nav input {
+.desktop-nav input {
     width: 215px;
     height: 100%;
     background-color: #FAFAFA;
@@ -90,11 +83,11 @@ nav input {
     font-size: 12px;
 }
 
-nav input:focus {
+.desktop-nav input:focus {
     outline: 1px solid var(--border-color);
 }
 
-nav input::placeholder {
+.desktop-nav input::placeholder {
     text-align: center;
 }
 
@@ -251,6 +244,7 @@ main {
     padding-bottom: 12px;
     border-radius: 3px;
     border: 1px solid var(--border-color);
+    font-size: 14px;
 }
 
 .post>*:not(img) {
@@ -322,10 +316,6 @@ main {
     border-radius: 50%;
 }
 
-.post-info p {
-    font-size: 14px;
-}
-
 /* Versão mobile do conteúdo */
 @media (min-width: 768px) and (max-width: 934px) {
     main {
@@ -373,7 +363,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 293px;
-    height: 400px;
+    height: fit-content;
+    font-size: 12px;
     position: sticky;
     top: calc(18px + 33px - 28px);
     /* + margin-top dos stories 
@@ -391,6 +382,7 @@ main {
     align-items: center;
     gap: 17px;
     margin-bottom: 24px;
+    font-size: 14px;
 }
 
 .sidebar-profile img {
@@ -400,7 +392,6 @@ main {
 }
 
 .sidebar-profile .fullname {
-    font-size: 14px;
     font-weight: 300;
     color: var(--secondary-text-color);
 }
@@ -419,7 +410,6 @@ main {
 }
 
 .suggestions-header>* {
-    font-size: 12px;
     font-weight: 500;
     color: var(--secondary-text-color);
 }
@@ -429,7 +419,6 @@ main {
 }
 
 .suggestion .follow {
-    font-size: 12px;
     font-weight: 500;
     color: #139EF2;
 }
