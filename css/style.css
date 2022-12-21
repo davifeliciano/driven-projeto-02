@@ -59,6 +59,19 @@ header {
     gap: var(--nav-icon-spacing);
 }
 
+.nav-home a,
+.nav-items a {
+    width: var(--nav-icon-size);
+    height: var(--nav-icon-size);
+    transition: all 100ms ease-in-out;
+}
+
+.nav-home a:hover,
+.nav-items a:hover {
+    transform: scale(115%);
+    transition: all 100ms ease-in-out;
+}
+
 nav ion-icon {
     font-size: var(--nav-icon-size)
 }
@@ -294,15 +307,11 @@ main {
     font-size: 16px;
 }
 
-.post-nav {
+.post-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-block: 10px;
-}
-
-.post-nav .nav-items {
-    margin-right: var(--nav-icon-spacing);
 }
 
 .post-info {
@@ -423,6 +432,11 @@ main {
     color: #139EF2;
 }
 
+.suggestion .follow:hover {
+    transform: scale(115%);
+    transition: all 100ms ease-in-out;
+}
+
 .suggestion-info {
     display: flex;
     align-items: center;
@@ -460,6 +474,15 @@ main {
 
 .sidebar nav a:last-child::after {
     display: none;
+}
+
+a>img {
+    transition: filter 300ms ease-in-out;
+}
+
+a>img:hover {
+    filter: brightness(80%);
+    transition: filter 300ms ease-in-out;
 }
 
 /* Versão mobile da sidebar */
