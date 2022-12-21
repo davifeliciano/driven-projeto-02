@@ -59,6 +59,7 @@ header {
     gap: var(--nav-icon-spacing);
 }
 
+.mobile-nav a,
 .nav-home a,
 .nav-items a {
     width: var(--nav-icon-size);
@@ -130,7 +131,7 @@ footer {
 }
 
 /* Versão mobile do header e do footer */
-@media (max-width: 767px) {
+@media (max-width: 613px) {
     .desktop-nav {
         display: none;
     }
@@ -326,14 +327,19 @@ main {
 }
 
 /* Versão mobile do conteúdo */
-@media (min-width: 768px) and (max-width: 934px) {
+@media (min-width: 614px) and (max-width: 934px) {
     main {
         width: var(--post-width);
         margin: auto;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 613px) {
+    body {
+        /* Evita zoom na versão mobile */
+        touch-action: pan-x pan-y;
+    }
+
     main {
         margin-top: 0;
         width: 100vw;
@@ -364,6 +370,13 @@ main {
         width: 100vw;
         margin-bottom: 0;
         border-top: none;
+        border-radius: 0;
+    }
+
+    /* Evita que a parte inferior do último
+       post fique coberta pelo footer */
+    .post:last-child {
+        margin-bottom: 52px;
     }
 }
 
