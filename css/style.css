@@ -273,9 +273,11 @@ main {
     padding-inline: 17px;
 }
 
-.post>img {
+.post>img,
+.post>video {
     width: 100%;
     height: auto;
+    padding: 0;
 }
 
 .post .username,
