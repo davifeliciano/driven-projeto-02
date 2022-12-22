@@ -13,6 +13,10 @@
     --secondary-text-color: #8E8E8E;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -64,11 +68,13 @@ header {
 .nav-items a {
     width: var(--nav-icon-size);
     height: var(--nav-icon-size);
+}
+
+ion-icon {
     transition: all 100ms ease-in-out;
 }
 
-.nav-home a:hover,
-.nav-items a:hover {
+ion-icon:hover {
     transform: scale(115%);
     transition: all 100ms ease-in-out;
 }
@@ -88,17 +94,20 @@ nav .logo {
 }
 
 /* Formatando caixa de pesquisa */
-.desktop-nav input {
-    width: 215px;
+input[type="text"] {
     height: 100%;
     background-color: #FAFAFA;
     border-radius: 3px;
     border: 1px solid var(--border-color);
-    font-size: 12px;
 }
 
-.desktop-nav input:focus {
+input[type="text"]:focus {
     outline: 1px solid var(--border-color);
+}
+
+.desktop-nav input {
+    width: 215px;
+    font-size: 1.2rem;
 }
 
 .desktop-nav input::placeholder {
@@ -212,11 +221,10 @@ main {
     font-size: var(--story-button-width);
     color: white;
     filter: drop-shadow(0px 2px 1px #323232);
-    transition: filter 300ms ease-in-out;
 }
 
 .stories ion-icon:hover {
-    transition: filter 300ms ease-in-out;
+    transition: filter 100ms ease-in-out;
     filter: drop-shadow(0px 2px 1px #323232) brightness(90%);
 }
 
@@ -242,7 +250,7 @@ main {
 
 .story p {
     width: 66px;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -258,7 +266,7 @@ main {
     padding-bottom: 12px;
     border-radius: 3px;
     border: 1px solid var(--border-color);
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .post>*:not(img) {
@@ -272,7 +280,7 @@ main {
 
 .post .username,
 .sidebar .username {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 500;
     color: var(--username-color);
 }
@@ -318,12 +326,82 @@ main {
 .post-info {
     display: flex;
     gap: 5px;
+    margin-bottom: 10px;
 }
 
 .post-info img {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+}
+
+.post-comments {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.post-comments>a {
+    color: #505050;
+}
+
+.post-comments p .hashtag {
+    color: #139EF2;
+}
+
+.post-comments p .hashtag:hover {
+    text-decoration: underline;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(1.5 * 1.4rem);
+    overflow: hidden;
+}
+
+.comment p {
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment div {
+    margin-left: 15px;
+    height: 1rem;
+    width: 1rem;
+}
+
+.comment ion-icon {
+    font-size: 1rem;
+}
+
+.post-new-comment {
+    display: flex;
+    gap: 10px;
+    height: var(--nav-height);
+}
+
+.post-new-comment input[type="text"] {
+    width: 100%;
+}
+
+.post-new-comment button {
+    height: 100%;
+    font-weight: 500;
+    color: #B2DFFC;
+    background-color: transparent;
+    border: none;
+    transition: all 300ms ease-in-out;
+}
+
+.post-new-comment button:hover {
+    cursor: pointer;
+    transform: scale(115%);
+    color: #0095F6;
+    transition: all 300ms ease-in-out;
 }
 
 /* Versão mobile do conteúdo */
@@ -386,7 +464,7 @@ main {
     flex-direction: column;
     width: 293px;
     height: fit-content;
-    font-size: 12px;
+    font-size: 1.2rem;
     position: sticky;
     top: calc(18px + 33px - 28px);
     /* + margin-top dos stories 
@@ -404,7 +482,7 @@ main {
     align-items: center;
     gap: 17px;
     margin-bottom: 24px;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .sidebar-profile img {
@@ -463,7 +541,7 @@ main {
 }
 
 .suggestion-info .description {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--secondary-text-color);
 }
@@ -475,7 +553,7 @@ main {
 
 .sidebar nav a,
 .sidebar .copyright {
-    font-size: 11px;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--secondary-text-color);
 }
