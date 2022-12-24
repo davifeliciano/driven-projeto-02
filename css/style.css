@@ -79,7 +79,8 @@ ion-icon:hover {
     transition: all 100ms ease-in-out;
 }
 
-nav ion-icon {
+nav ion-icon,
+.post-actions ion-icon {
     font-size: var(--nav-icon-size)
 }
 
